@@ -21,8 +21,17 @@ pipeline {
       }
     }
     stage('Build') {
-      steps {
-        sh 'echo "build"'
+      parallel {
+        stage('Build') {
+          steps {
+            sh 'echo "build"'
+          }
+        }
+        stage('') {
+          steps {
+            sh 'echo "1"'
+          }
+        }
       }
     }
     stage('Deploy ') {
