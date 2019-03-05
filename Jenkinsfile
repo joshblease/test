@@ -44,5 +44,15 @@ pipeline {
         }
       }
     }
+    stage('We wait') {
+      steps {
+        input 'Hello?'
+      }
+    }
+    stage('End!') {
+      steps {
+        sh 'echo "DONE"'
+      }
+    }
   }
 }
